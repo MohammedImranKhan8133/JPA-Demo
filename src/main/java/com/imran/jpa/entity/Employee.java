@@ -25,9 +25,9 @@ public class Employee {
     )
     private int emp_id;
     private String emp_name;
-    @OneToOne(
-            mappedBy = "employee"
-    )
-    private Amount amount;
+//    @OneToOne(
+//            mappedBy = "employee"
+//    )
+//    private Amount amount;
 
 }

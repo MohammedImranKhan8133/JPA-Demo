@@ -21,4 +21,10 @@ public class Home {
         personsService.insertData();
         return "inserted";
     }
+
+    @GetMapping("/insertcourse")
+    public String name1(){
+        personsService.insertCourseData();
+        return "insertedCourseData";
+    }
 }

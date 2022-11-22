@@ -1,6 +1,9 @@
 package com.imran.jpa.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,19 +12,19 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString(exclude = "employee")
-public class Amount {
+public class Department {
     @Id
     @SequenceGenerator(
-            name = "amount_sequence",
-            sequenceName = "amount_sequence",
+            name = "department_sequence",
+            sequenceName = "department_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "amount_sequence"
+            generator = "department_sequence"
     )
-    private int amt_id;
+    private int Dep_id;
+    private String emp_role;
     @OneToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
@@ -32,6 +35,4 @@ public class Amount {
             unique = true
     )
     private Employee employee;
-    private int emp_amount;
-
 }
