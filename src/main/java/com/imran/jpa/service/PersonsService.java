@@ -91,19 +91,37 @@ public class PersonsService {
 
     public void insertCourseData(){
 
-        Course course = Course.builder()
-                .courseId(1L)
-                .title("Spring Boot")
+//        Course course = Course.builder()
+//                .courseId(1L)
+//                .title("Spring Boot")
+//                .build();
+//
+//        List<Course> courses = Arrays.asList(course);
+//        Teacher teacher = Teacher.builder()
+//                .teacherId(1L)
+//                .firstName("jaffer")
+//                .lastName("siddiq")
+//                .courses(courses)
+//                .build();
+
+        Student student = Student.builder()
+                .studentId(1L)
+                .st_name("madhavan")
                 .build();
 
-        List<Course> courses = Arrays.asList(course);
-        Teacher teacher = Teacher.builder()
-                .teacherId(1L)
-                .firstName("jaffer")
-                .lastName("siddiq")
-                .courses(courses)
+        Student student1 =Student.builder()
+                .studentId(2L)
+                .st_name("abu")
                 .build();
 
-          teacherRepository.save(teacher);
+        List<Student> list =Arrays.asList(student,student1);
+        Course course3 = Course.builder()
+                .courseId(3L)
+                .title("python")
+                .students(list)
+                .build();
+
+          courseRepository.save(course3);
+         // courseRepository.save(course1);
     }
 }

@@ -30,7 +30,7 @@ public class Department {
             fetch = FetchType.LAZY
     )
     @JoinColumn(
-            name = "emp_id",
+                    name = "emp_id",
             referencedColumnName = "emp_id",
             unique = true
     )
